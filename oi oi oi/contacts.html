@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Время Гор</title>
+	<link rel="stylesheet" href="styles/contacts.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-custom mt-3">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="font-size:64px;">ВРЕМЯ ГОР</a>
+
+            <div class="ms-auto d-flex gap-4">
+                <a href="#">Блог</a>
+				<a href="contacts.html">Контакты</a>
+				<a href="tours.html">Туры</a>
+				<a href="#">Наш состав</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="divider"></div>
+
+    <h1>Контакты</h1>
+
+    <!-- Санкт-Петербург -->
+    <h2 style="margin-top:50px;">Санкт-Петербург</h2>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center align-items-start">
+            <div class="col-lg-4 contact-block">
+                <p><b>Адрес:</b><br>Большая Морская улица, д. 18</p>
+                <p><b>Телефон:</b><br>8 (999) 123-13-13</p>
+                <p>mountimespb@mail.ru</p>
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Карта СПб -->
+                <div id="map-spb" class="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Москва -->
+    <h2 style="margin-top:70px;">Москва</h2>
+
+    <div class="container mt-4 mb-5">
+        <div class="row justify-content-center align-items-start">
+            <div class="col-lg-4 contact-block">
+                <p><b>Адрес:</b><br>1-й Красногвардейский проезд, д. 4, к. А, стр. 1</p>
+                <p><b>Телефоны:</b><br>8 (999) 123-14-14</p>
+                <p>mountimemsk@mail.ru</p>
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Карта Москвы -->
+                <div id="map-msk" class="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Яндекс.Карты API -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey&lang=ru_RU"></script>
+
+    <script>
+        ymaps.ready(init);
+
+        function init() {
+
+            // ----- Санкт-Петербург -----
+            var spbMap = new ymaps.Map("map-spb", {
+                center: [59.934280, 30.306430], // СПб
+                zoom: 13,
+                controls: ['zoomControl']
+            });
+
+            var spbPlacemark = new ymaps.Placemark(
+                [59.931515, 30.306015], // Большая Морская, 18{ balloonContent: 'Большая Морская улица, д. 18' },
+                { preset: 'islands#redIcon' }
+            );
+
+            spbMap.geoObjects.add(spbPlacemark);
+
+
+            // ----- Москва -----
+            var mskMap = new ymaps.Map("map-msk", {
+                center: [55.751244, 37.618423], // Москва
+                zoom: 12,
+                controls: ['zoomControl']
+            });
+
+            var mskPlacemark = new ymaps.Placemark(
+                [55.751889, 37.536232], // 1-й Красногвардейский пр., 4кА стр1
+                { balloonContent: '1-й Красногвардейский проезд, д. 4, к. А, стр. 1' },
+                { preset: 'islands#redIcon' }
+            );
+
+            mskMap.geoObjects.add(mskPlacemark);
+        }
+    </script>
+  <!-- Футер -->
+  <footer class="footer">
+    <p>mountime@mail.ru</p>
+    <div class="socials">
+      <div class="icon">
+	  <img src="images/vk-icon.png" alt="Вк" class="icon">
+	  </div>
+      <div class="icon">
+	  <img src="images/yt-icon.png" alt="Ют" class="icon">
+	  </div>
+      <div class="icon">
+	  <img src="images/insta-icon.png" alt="Инст" class="icon">
+	  </div>
+      <div class="icon">
+	  <img src="images/tg-icon.png" alt="Тг" class="icon">
+	  </div>
+    </div>
+  </footer>
+</body>
+</html>
