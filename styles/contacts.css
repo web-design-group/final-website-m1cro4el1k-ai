@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'SouthGhetto';
+  src: url('SouthGhetto.ttf');
+}
+
+/* ----- ГЛОБАЛЬНЫЙ СТИЛЬ ----- */
+
+body {
+  margin: 0;
+  background: #fff;
+  font-family: 'SouthGhetto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ----- МЕНЮ ----- */
+
+.navbar-custom a {
+  font-size: 18px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  transition: 0.3s;
+  color: black;
+}
+
+.navbar-custom a:hover {
+  color: gray;
+}
+
+/* ----- ЗАГОЛОВКИ ----- */
+
+h1, h2, h3 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Линия */
+.divider {
+  width: 60%;
+  height: 2px;
+  background-color: #62006B;
+  margin: 20px auto;
+}
+
+/* ----- ФУТЕР ----- */
+
+.footer {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+/* ----- КАРТЫ ----- */
+
+.map {
+  width: 550px;
+  height: 380px;
+  border: 3px solid #00322C;
+}
+	
+/*применяем шрифт ко всем элементам */
+body, 
+body * {
+    font-family: 'SouthGhetto', sans-serif;
+}
+.logo-link {
+  all: unset;        
+  font-size: 64px;
+  font-family: 'SouthGhetto', sans-serif;
+  cursor: pointer;
+  color: #000;
+}
