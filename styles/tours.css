@@ -167,10 +167,17 @@ button {
 }
 
 .logo-link {
-  all: unset;        
   font-size: 64px;
   font-family: 'SouthGhetto', sans-serif;
-  cursor: pointer;
   color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
+.logo-link:visited,
+.logo-link:hover,
+.logo-link:active,
+.logo-link:focus {
+  color: #000;
+  text-decoration: none;
+}
